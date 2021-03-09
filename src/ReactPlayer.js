@@ -104,7 +104,9 @@ export const createReactPlayer = (players, fallback) => {
     }
 
     handleReady = () => {
-      this.props.onReady(this)
+      this.props.onReady({
+        seekTo:this.seekTo
+      })
     }
 
     getActivePlayer = memoize(url => {
